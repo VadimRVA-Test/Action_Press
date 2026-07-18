@@ -13,7 +13,7 @@ class AuthPage(PersonalPage):
     _label_mail_selector = "//input[@name='login']/..//label"
     _input_login_selector = "[name='login']"
 
-    _pass_selector = "//input[@name='password']/..//label"
+    _pass_selector = "//label[text()='Пароль']"
     _input_pass_selector = "[name='password']"
 
     _button_remind_selector = ".Button2_inline__H9NxX"
@@ -21,11 +21,11 @@ class AuthPage(PersonalPage):
 
     _button_registration_selector = ".RegistrationButton_createAccButton__LKi8l"
 
-    _title_supports_locator = ".SocialButtons_socialAuthHeader__10RVn"
-    _button_vk_locator = "[data-qa-locator='vk-auth']"
-    _button_mail_locator = "[data-qa-locator='mailru-auth']"
-    _button_classmates_locator = "[data-qa-locator='ok-auth']"
-    _button_yandex_locator = "[data-qa-locator='yandex-auth']"
+    _title_supports_selector = ".SocialButtons_socialAuthHeader__10RVn"
+    _button_vk_selector = "[data-qa-locator='vk-auth']"
+    _button_mail_selector = "[data-qa-locator='mailru-auth']"
+    _button_classmates_selector = "[data-qa-locator='ok-auth']"
+    _button_yandex_selector = "[data-qa-locator='yandex-auth']"
 
     _phone_locator = ".Copyright_phone__8izzP"
     _copyright_icon_selector = ".Copyright_copyrightText__yPT_Z"
@@ -62,19 +62,19 @@ class AuthPage(PersonalPage):
         return self.element(self._button_registration_selector)
 
     def title_supports_locator(self):
-        return self.element(self._title_supports_locator)
+        return self.element(self._title_supports_selector)
 
     def button_vk_locator(self):
-        return self.element(self._button_vk_locator)
+        return self.element(self._button_vk_selector)
 
     def button_mail_locator(self):
-        return self.element(self._button_mail_locator)
+        return self.element(self._button_mail_selector)
 
     def button_classmates_locator(self):
-        return self.element(self._button_classmates_locator)
+        return self.element(self._button_classmates_selector)
 
     def button_yandex_locator(self):
-        return self.element(self._button_yandex_locator)
+        return self.element(self._button_yandex_selector)
 
     def phone_locator(self):
         return self.element(self._phone_locator)
@@ -94,24 +94,23 @@ class AuthPage(PersonalPage):
 
     # комбинированные методы
     def visible_elements(self):
-        return [
-            self.wrapper_locator(),
-            self.logo_header_locator(),
-            self.logo_locator(),
-            self.label_mail_locator(),
-            self.input_login_locator(),
-            self.pass_locator(),
-            self.input_pass_locator(),
-            self.button_remind_locator(),
-            self.button_enter_locator(),
-            self.button_registration_locator(),
-            self.title_supports_locator(),
-            self.button_vk_locator(),
-            self.button_mail_locator(),
-            self.button_classmates_locator(),
-            self.button_yandex_locator(),
-            self.phone_locator(),
-            self.copyright_icon_locator()]
+        return [self.wrapper_locator(),
+                self.logo_header_locator(),
+                self.logo_locator(),
+                self.label_mail_locator(),
+                self.input_login_locator(),
+                self.pass_locator(),
+                self.input_pass_locator(),
+                self.button_remind_locator(),
+                self.button_enter_locator(),
+                self.button_registration_locator(),
+                self.title_supports_locator(),
+                self.button_vk_locator(),
+                self.button_mail_locator(),
+                self.button_classmates_locator(),
+                self.button_yandex_locator(),
+                self.phone_locator(),
+                self.copyright_icon_locator()]
 
     def authorize(self, mail, password):
         self.fill_login(mail)

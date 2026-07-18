@@ -1,10 +1,11 @@
 import pytest
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, Page
 from pages.action_press_page import ActionPressPage
-from pages.action_press_about_page import AboutPage
-from pages.action_press_contacts_page import ContactsPage
-from pages.action_press_payment_page import PaymentPage
+from pages.about_page import AboutPage
+from pages.contacts_page import ContactsPage
+from pages.payment_page import PaymentPage
 from pages.auth_page import AuthPage
+from utils.base_assertions import Assertions
 
 
 @pytest.fixture(scope="session")
@@ -15,7 +16,7 @@ def playwright_instance():
 
 @pytest.fixture
 def browser(playwright_instance):
-    browser = playwright_instance.chromium.launch(headless=False, slow_mo=1000)
+    browser = playwright_instance.chromium.launch(headless=True, slow_mo=1000)
     yield browser
     browser.close()
 
@@ -43,7 +44,9 @@ def auth_page(page):
 
 @pytest.fixture
 def action_page(page):
-    return ActionPressPage(page)
+    main_page = ActionPressPage(page)
+    main_page.open_page()
+    return main_page
 
 
 @pytest.fixture
@@ -59,3 +62,8 @@ def contacts_page(page):
 @pytest.fixture
 def payment_page(page):
     return PaymentPage(page)
+
+
+@pytest.fixture
+def assertions(page):
+    return Assertions(page)

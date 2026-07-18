@@ -1,9 +1,10 @@
 class HeaderControl:
+
     def __init__(self, page):
         self.page = page
 
     # селекторы
-    _skeleton_locator = ".navbar-light"
+    _skeleton_selector = ".navbar-light"
     _header_selector = ".navbar-brand"
 
     _phone_selector = "div[data-qa-locator='phoneNumber']"
@@ -15,13 +16,13 @@ class HeaderControl:
     _button_auth_reg_selector = ".authButton_button__jBFUH"
     _profile_name_selector = ".authButton_buttonText__wGjvY"
 
-    _button_product_selector = "//ul[@class='Dropdown__navigationList--Onlwi']//li[1]"
-    _button_close_doc_selector = "//ul[@class='Dropdown__navigationList--Onlwi']//li[2]"
-    _button_activation_selector = "//ul[@class='Dropdown__navigationList--Onlwi']//li[3]"
-    _button_useful_selector = "//ul[@class='Dropdown__navigationList--Onlwi']//li[4]"
-    _button_support_selector = "//ul[@class='Dropdown__navigationList--Onlwi']//li[5]"
-    _button_profile_selector = "//ul[@class='Dropdown__navigationList--Onlwi']//li[6]"
-    _button_exit_auth = "//a[contains(@class,'Dropdown__logoutButton--94Zp7')]"
+    _button_product_selector = "[href = 'https://id2.action-media.ru/Personal/Products']"
+    _button_close_doc_selector = "[href = 'https://id2.action-media.ru/closingDocuments']"
+    _button_activation_selector = "[href = 'https://id2.action-media.ru/personal/products/?codeactivation=1']"
+    _button_useful_selector = "[href='https://id2.action-media.ru/Polezno']"
+    _button_support_selector = "[href='https://id2.action-media.ru/Feedback']"
+    _button_profile_selector = "[href='https://id2.action-media.ru/Personal/About']"
+    _button_exit_auth_selector = "//a[contains(@class,'Dropdown__logoutButton--94Zp7')]"
 
     _basket_product_selector = "//a[contains(@class, 'basket-item')]"
 
@@ -39,7 +40,7 @@ class HeaderControl:
 
     # локатор
     def skeleton_locator(self):
-        return self.page.locator(self._skeleton_locator)
+        return self.page.locator(self._skeleton_selector)
 
     def header_locator(self):
         return self.page.locator(self._header_selector)
@@ -80,8 +81,8 @@ class HeaderControl:
     def button_profile_locator(self):
         return self.page.locator(self._button_profile_selector)
 
-    def button_exit_auth(self):
-        return self.page.locator(self._button_exit_auth)
+    def button_exit_auth_locator(self):
+        return self.page.locator(self._button_exit_auth_selector)
 
     def basket_product_locator(self):
         return self.page.locator(self._basket_product_selector)
@@ -141,4 +142,4 @@ class HeaderControl:
                 self.button_useful_locator(),
                 self.button_support_locator(),
                 self.button_profile_locator(),
-                self.button_exit_auth()]
+                self.button_exit_auth_locator()]
