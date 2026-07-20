@@ -17,3 +17,13 @@ class FooterControl:
 
     def footer_payment_button_locator(self):
         return self.page.locator(self._footer_payment_button_selector)
+
+    # методы
+    def click_footer_about_button(self):
+        self.footer_about_button_locator().click()
+
+    def click_footer_contacts_button(self):
+        self.footer_contacts_button_locator().click()
+
+    def click_footer_payment_button(self):
+        self.footer_payment_button_locator().click()

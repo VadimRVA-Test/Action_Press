@@ -27,11 +27,3 @@ payment_non_cash = "Безналичный платеж"
 payment_cash = "Наличный платеж"
 payment_card = "Оплата банковской картой"
 payment_refound = "Возврат денежных средств"
-
-footer_logotip = "[alt='Action logo']"
-footer_title1 = "[alt='Action logo']"
-footer_title2 = "Официальный интернет-магазин группы Актион"
-
-footer_about_button = "//div[contains(@class,'plf-6')]//a[@href='/about/']"
-footer_contacts_button = "//div[contains(@class,'plf-6')]//a[@href='/about/contacts/']"
-footer_payment_button = "//div[contains(@class,'plf-6')]//a[@href='/about/payment/']"

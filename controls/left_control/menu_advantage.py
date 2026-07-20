@@ -5,9 +5,9 @@ class MenuAdvantages:
 
     # селекторы
     _advantages_selector = "//span[text()='Наши преимущества']"
-    _advantages_count_selector = "//span[text()='Наши преимущества']/../..//span[@class='our-adv-slant']"
+    _advantages_count_selector = "//span[text()='Наши преимущества']/../..//li"
 
-    # локатор
+    # локаторы
     def advantages_locator(self):
         return self.page.locator(self._advantages_selector)
 
@@ -15,8 +15,8 @@ class MenuAdvantages:
         return self.page.locator(self._advantages_count_selector)
 
     # методы
-    def visible_elements(self):
+    def collection_of_unique_locator(self):
         return [self.advantages_locator()]
 
-    def list_elements(self):
+    def collections_of_repeating_locators(self):
         return [self.advantages_count_locator()]

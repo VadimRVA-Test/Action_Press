@@ -66,13 +66,13 @@ class PaymentPage(PersonalPage):
         return self.element(self._refound_list_selector)
 
     # методы
-    def visible_elements(self):
+    def collection_of_unique_locators(self):
         return [self.skeleton_locator(),
                 self.static_page_locator(),
                 self.payment_description_img_locator(),
                 self.refound_locator()]
 
-    def list_elements(self):
+    def collections_of_repeating_locators(self):
         return [self.payment_non_cash_locator(),
                 self.payment_non_cash_img_locator(),
                 self.payment_title_locator(),

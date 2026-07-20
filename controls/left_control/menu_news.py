@@ -8,7 +8,7 @@ class MenuNews:
     _news_count_selector = "//span[text()='Новости']/../..//li[@data-qa-locator='newsLink']"
     _all_news_selector = "[href='/news/']"
 
-    # локатор
+    # локаторы
     def news_locator(self):
         return self.page.locator(self._news_selector)
 
@@ -19,9 +19,9 @@ class MenuNews:
         return self.page.locator(self._all_news_selector)
 
     # методы
-    def visible_elements(self):
+    def collection_of_unique_locators(self):
         return [self.news_locator(),
                 self.all_news_locator()]
 
-    def list_elements(self):
+    def collections_of_repeating_locators(self):
         return [self.news_count_locator()]

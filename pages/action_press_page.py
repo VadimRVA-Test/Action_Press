@@ -8,7 +8,7 @@ class ActionPressPage(PersonalPage):
         super().__init__(page)
         self.page = page
 
-    # Селекторы
+    # селекторы
     _skeleton_selector = ".col-lg-9"
 
     _recommended_publications_selector = ".title-text"
@@ -20,7 +20,7 @@ class ActionPressPage(PersonalPage):
     _price_zone_selector = "//div[contains(@class,'order-12')]//div[contains(@class,'price-zone')]"
     _button_box_selector = "//div[contains(@class,'order-12')]//div[contains(@class,'price-zone')]//button"
 
-    # Локаторы
+    # локаторы
     def skeleton_locator(self):
         return self.element(self._skeleton_selector)
 
@@ -45,12 +45,12 @@ class ActionPressPage(PersonalPage):
     def button_box_locator(self):
         return self.element(self._button_box_selector)
 
-    # Методы
-    def visible_elements(self):
+    # методы
+    def collection_of_unique_locator(self):
         return [self.skeleton_locator(),
                 self.recommended_publications_locator()]
 
-    def list_elements(self):
+    def collections_of_repeating_locators(self):
         return [self.recommendation1_locator(),
                 self.image_recommendation1_locator(),
                 self.card_title_rec1_locator(),

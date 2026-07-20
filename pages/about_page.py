@@ -7,8 +7,7 @@ class AboutPage(PersonalPage):
     def __init__(self, page):
         super().__init__(page)
 
-    # Селектор
-
+    # селекторы
     _skeleton_selector = ".col-sm-12.col-lg-9"
     _static_selector = ".static-page-h2"
     _banner_image_selector = "img[class='banner__image_content']"
@@ -26,7 +25,7 @@ class AboutPage(PersonalPage):
     _bottom_devider_selector = "[class='bottom__devider']"
     _bottom_devider_count_selector = "[class='bottom__advantages_block']"
 
-    # Локатор
+    # локаторы
     def skeleton_locator(self):
         return self.page.locator(self._skeleton_selector)
 
@@ -66,8 +65,8 @@ class AboutPage(PersonalPage):
     def bottom_devider_count_locator(self):
         return self.page.locator(self._bottom_devider_count_selector)
 
-    # Методы
-    def visible_elements(self):
+    # методы
+    def collection_of_unique_locators(self):
         return [self.skeleton_locator(),
                 self.static_locator(),
                 self.banner_image_locator(),
@@ -79,7 +78,7 @@ class AboutPage(PersonalPage):
                 self.bottom_title_locator(),
                 self.bottom_devider_locator()]
 
-    def list_elements(self):
+    def collections_of_repeating_locators(self):
         return [self.content_count_list_locator(),
                 self.bottom_count_locator(),
                 self.bottom_devider_count_locator()]

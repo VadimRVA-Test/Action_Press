@@ -30,7 +30,7 @@ class AuthPage(PersonalPage):
     _phone_locator = ".Copyright_phone__8izzP"
     _copyright_icon_selector = ".Copyright_copyrightText__yPT_Z"
 
-    # локатор
+    # локаторы
     def wrapper_locator(self):
         return self.element(self._wrapper_selector)
 
@@ -93,7 +93,7 @@ class AuthPage(PersonalPage):
         self.button_enter_locator().click()
 
     # комбинированные методы
-    def visible_elements(self):
+    def collection_of_unique_locator(self):
         return [self.wrapper_locator(),
                 self.logo_header_locator(),
                 self.logo_locator(),

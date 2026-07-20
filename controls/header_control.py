@@ -38,7 +38,7 @@ class HeaderControl:
     _search_button_selector = ".l-ss-c-button.l-ss-c-search-input-action-search"
     _result_selector = ".l-ss-c-text-caption"
 
-    # локатор
+    # локаторы
     def skeleton_locator(self):
         return self.page.locator(self._skeleton_selector)
 
@@ -119,7 +119,7 @@ class HeaderControl:
         self.search2_locator().fill(data)
         return self.search2_locator()
 
-    def visible_elements(self):
+    def collection_of_unique_locators(self):
         return [self.skeleton_locator(),
                 self.header_locator(),
                 self.phone_locator(),
@@ -135,7 +135,7 @@ class HeaderControl:
                 self.deliver_locator(),
                 self.search_locator()]
 
-    def profile_button(self):
+    def profile_button_locators(self):
         return [self.button_product_locator(),
                 self.button_close_doc_locator(),
                 self.button_activation_locator(),
@@ -143,3 +143,6 @@ class HeaderControl:
                 self.button_support_locator(),
                 self.button_profile_locator(),
                 self.button_exit_auth_locator()]
+
+    def click_button_profile(self):
+        return self.button_auth_reg_locator().click()

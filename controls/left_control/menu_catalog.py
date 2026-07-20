@@ -38,7 +38,7 @@ class MenuCatalog:
     _verification_counterparties_selector = (
         "//div[@class='pt-5']//a[@href='/catalog/elektronnye-servisy/proverka-kontragentov/']")
 
-    # локатор
+    # локаторы
     def catalog_locator(self):
         return self.page.locator(self._catalog_selector)
 
@@ -94,7 +94,7 @@ class MenuCatalog:
         return self.page.locator(self._verification_counterparties_selector)
 
     # методы
-    def visible_elements(self):
+    def collection_of_unique_locators(self):
         return [self.catalog_locator(),
                 self.electronic_products_locator(),
                 self.for_supervisor_locator(),

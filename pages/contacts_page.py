@@ -68,14 +68,14 @@ class ContactsPage(PersonalPage):
         return self.element(self._seminar_selector)
 
     # методы
-    def visible_elements(self):
+    def collection_of_unique_locators(self):
         return [self.static_page_locator(),
                 self.map_container_locator(),
                 self.filials_count_locator(),
                 self.profit_locator(),
                 self.seminar_locator()]
 
-    def list_elements(self):
+    def collections_of_repeating_locators(self):
         return [self.filial_count_devider_locator(),
                 self.filial_count_devider2_locator(),
                 self.filial_count_img_locator(),
