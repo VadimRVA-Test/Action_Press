@@ -26,17 +26,17 @@ class HeaderControl:
 
     _basket_product_selector = "//a[contains(@class, 'basket-item')]"
 
-    _about_selector = "//a[contains(@class, 'sub-header-btn') and @href='/about/']"
-    _contacts_selector = "//a[contains(@class, 'sub-header-btn') and @href='/about/contacts/']"
-    _payment_selector = "//a[contains(@class, 'sub-header-btn') and @href='/about/payment/']"
-    _deliver_selector = "//a[contains(@class, 'sub-header-btn') and @href='/about/deliver/']"
+    _about_selector = "//a[contains(@class,'sub-header-btn') and @href='/about/']"
+    _contacts_selector = "//a[contains(@class,'sub-header-btn') and @href='/about/contacts/']"
+    _payment_selector = "//a[contains(@class,'sub-header-btn') and @href='/about/payment/']"
+    _deliver_selector = "//a[contains(@class,'sub-header-btn') and @href='/about/deliver/']"
 
     _search_selector = "//div[@class='col-2-sub']//input[contains(@class,'form-control-sub-header')]"
 
-    _search2_selector = "[placeholder='Что вы хотите найти?']"
+    _search_input_selector = "[placeholder='Что вы хотите найти?']"
     _fluid_selector = ".img-fluid"
     _search_button_selector = ".l-ss-c-button.l-ss-c-search-input-action-search"
-    _result_selector = ".l-ss-c-text-caption"
+    _result_selector = ".l-ss-c-filters-found-items"
 
     # локаторы
     def skeleton_locator(self):
@@ -103,7 +103,7 @@ class HeaderControl:
         return self.page.locator(self._search_selector)
 
     def search2_locator(self):
-        return self.page.locator(self._search2_selector)
+        return self.page.locator(self._search_input_selector)
 
     def fluid_locator(self):
         return self.page.locator(self._fluid_selector)

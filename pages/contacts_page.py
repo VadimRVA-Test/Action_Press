@@ -12,12 +12,12 @@ class ContactsPage(PersonalPage):
     _map_container_selector = ".ymaps3--map-container"
 
     _filials_count_selector = ".filials"
-    _filial_count_devider_selector = "//div[contains(@class,'filials__border_devider')]"
+    _filial_count_above_devider_selector = "//div[contains(@class,'filials__border_devider')]"
     _filial_count_img_selector = "//div[contains(@class,'filials__block')]//img"
     _filial_count_label_selector = "//label[@class='filials__block_label']"
     _filial_count_contact_selector = "//div[@class='filials__block_contact']"
     _filial_count_address_selector = "//div[@class='filials__block_address']"
-    _filial_count_devider2_selector = "//div[@class='filials']//div[(@class='filials__block')]"
+    _filial_count_low_devider_selector = "//div[@class='filials']//div[(@class='filials__block')]"
 
     _filial_count_feedbeak_selector = "label[class='feedback__title']"
     _filial_count_mess_selector = "div[class='feedback__messengers_element']"
@@ -37,11 +37,11 @@ class ContactsPage(PersonalPage):
     def filials_count_locator(self):
         return self.element(self._filials_count_selector)
 
-    def filial_count_devider_locator(self):
-        return self.element(self._filial_count_devider_selector)
+    def filial_count_above_devider_locator(self):
+        return self.element(self._filial_count_above_devider_selector)
 
-    def filial_count_devider2_locator(self):
-        return self.element(self._filial_count_devider2_selector)
+    def filial_count_low_devider_locator(self):
+        return self.element(self._filial_count_low_devider_selector)
 
     def filial_count_img_locator(self):
         return self.element(self._filial_count_img_selector)
@@ -76,8 +76,8 @@ class ContactsPage(PersonalPage):
                 self.seminar_locator()]
 
     def collections_of_repeating_locators(self):
-        return [self.filial_count_devider_locator(),
-                self.filial_count_devider2_locator(),
+        return [self.filial_count_above_devider_locator(),
+                self.filial_count_low_devider_locator(),
                 self.filial_count_img_locator(),
                 self.filial_count_label_locator(),
                 self.filial_count_contact_locator(),

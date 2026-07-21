@@ -5,7 +5,7 @@ class MenuNews:
 
     # селекторы
     _news_selector = "//span[text()='Новости']"
-    _news_count_selector = "//span[text()='Новости']/../..//li[@data-qa-locator='newsLink']"
+    _news_count_selector = "//div[@data-qa-locator='mainBlockNews']//li[@data-qa-locator='newsLink']"
     _all_news_selector = "[href='/news/']"
 
     # локаторы
