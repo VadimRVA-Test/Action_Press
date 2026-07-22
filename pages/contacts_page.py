@@ -22,10 +22,8 @@ class ContactsPage(PersonalPage):
     _filial_count_feedbeak_selector = "label[class='feedback__title']"
     _filial_count_mess_selector = "div[class='feedback__messengers_element']"
 
-    _profit_selector = (
-        "[href='https://www.proflit.ru/?utm_source=action-press&utm_campaign=action-press&utm_content=action-press']")
-    _seminar_selector = (
-        "[href='https://www.seminar.ru/?utm_source=action-press&utm_campaign=action-press&utm_content=action-press']")
+    _profit_selector = "//label[@class='feedback__title']/..//a[contains(@href,'https://www.proflit.ru/')]"
+    _seminar_selector = "//label[@class='feedback__title']/..//a[contains(@href,'https://www.seminar.ru/')]"
 
     # локаторы
     def static_page_locator(self):

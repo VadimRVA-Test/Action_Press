@@ -7,7 +7,7 @@ class BasePage:
     def __init__(self, page: Page):
         self.page = page
 
-    def composite_url(self, url):
+    def composite_url(self, url=None):
         if url:
             return f"{self.BASE_URL}{url}"
         else:

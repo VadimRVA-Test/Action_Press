@@ -5,7 +5,7 @@ class HeaderControl:
 
     # селекторы
     _skeleton_selector = ".navbar-light"
-    _header_selector = ".navbar-brand"
+    _header_selector = "//img[contains(@src,'/Logo-Action.png')]"
 
     _phone_selector = "div[data-qa-locator='phoneNumber']"
 
@@ -133,7 +133,8 @@ class HeaderControl:
                 self.contacts_locator(),
                 self.payment_locator(),
                 self.deliver_locator(),
-                self.search_locator()]
+                self.search_locator(),
+                self.fluid_locator()]
 
     def profile_button_locators(self):
         return [self.button_product_locator(),

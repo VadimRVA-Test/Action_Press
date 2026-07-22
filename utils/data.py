@@ -1,10 +1,6 @@
-URl = "https://action-press.ru/"
-ABOUT_URL = "https://action-press.ru/about/"
-CONTACT_URL = "https://action-press.ru/about/contacts/"
-PAYMENT_URL = "https://action-press.ru/about/payment/"
 AUTHORIZ_URL = "https://id2.action-media.ru/logon/index?reglink=https"
 
-header = "actionLogo"
+header = "https://images.action-press.ru/action-press/logo/Logo-Action.png"
 catalog = "Каталог"
 
 search_query = "Школа Главбуха госучереждения. Корпоративная версия"
@@ -22,7 +18,7 @@ about_banner_title = "Почему нам доверяют"
 about_content_title = "Гарантии качества"
 title_about = '"Актион-пресс" | О нас'
 
-contacts1 = "Контакты"
+contacts = "Контакты"
 title_contacts = '"Актион-пресс" | Контакты'
 
 payment = "Способы оплаты"

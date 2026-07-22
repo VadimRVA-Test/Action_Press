@@ -15,7 +15,7 @@ class MenuAdvantages:
         return self.page.locator(self._advantages_count_selector)
 
     # методы
-    def collection_of_unique_locator(self):
+    def collection_of_unique_locators(self):
         return [self.advantages_locator()]
 
     def collections_of_repeating_locators(self):

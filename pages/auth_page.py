@@ -85,6 +85,7 @@ class AuthPage(PersonalPage):
     # методы
     def fill_login(self, mail):
         self.input_login_locator().fill(mail)
+        self.input_login_locator().wait_for(state="visible", timeout=20000)
 
     def fill_password(self, password):
         self.input_pass_locator().fill(password)
@@ -93,7 +94,7 @@ class AuthPage(PersonalPage):
         self.button_enter_locator().click()
 
     # комбинированные методы
-    def collection_of_unique_locator(self):
+    def collection_of_unique_locators(self):
         return [self.wrapper_locator(),
                 self.logo_header_locator(),
                 self.logo_locator(),
