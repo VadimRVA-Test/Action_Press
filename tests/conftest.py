@@ -17,7 +17,7 @@ def playwright_instance():
 
 @pytest.fixture
 def browser(playwright_instance):
-    browser = playwright_instance.chromium.launch(headless=True, slow_mo=777)
+    browser = playwright_instance.chromium.launch(headless=True)
     yield browser
     browser.close()
 
@@ -44,13 +44,13 @@ def auth_page(page):
 
 
 @pytest.fixture
-def auth_user_page(action_page, auth_page, context):
-    action_page.open_page()
+def auth_user_page(action_page, context):
     with context.expect_page() as new_page:
         action_page.header_control.button_auth_reg_locator().click()
-    auth_page.page = new_page.value
-    auth_page.page.wait_for_timeout(3000)
-    auth_page.authorize(credentials[0], credentials[1])
+    new_auth_page = new_page.value
+    new_auth_page.wait_for_load_state("networkidle")
+    new_auth_page = AuthPage(new_auth_page)
+    new_auth_page.authorize(credentials[0], credentials[1])
     action_page.open_page()
     return action_page
 

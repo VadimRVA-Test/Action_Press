@@ -12,13 +12,13 @@ class AboutPage(PersonalPage):
     _static_selector = ".static-page-h2"
     _banner_image_selector = "img[class='banner__image_content']"
     _banner_text_selector = "div[class='banner__text_content']"
-    _banner_text_title_selector = "div[class='banner__text_title']"
+    _banner_text_title_selector = "//h2[text()='Почему нам доверяют']"
     _content_list_image_selector = "div[class='content__list_image']"
 
     _content_list_selector = "div[class='content__list']"
     _content_list_count_selector = "//li[@class='numbered__list_el']"
 
-    _content_title_selector = "h2[class='content__title']"
+    _content_title_selector = "//h2[text()='Гарантии качества']"
     _bottom_count_selector = "//ul[@class='content__BottomList']//li"
 
     _bottom_title_selector = "[class='bottom__title']"

@@ -11,7 +11,7 @@ class AuthPage(PersonalPage):
     _logo_selector = ".LocalizedLogo_logoRU__6lWNu"
 
     _label_mail_selector = "//input[@name='login']/..//label"
-    _input_login_selector = "[name='login']"
+    _input_login_selector = "[data-qa-locator='login']"
 
     _pass_selector = "//label[text()='Пароль']"
     _input_pass_selector = "[name='password']"
@@ -85,7 +85,6 @@ class AuthPage(PersonalPage):
     # методы
     def fill_login(self, mail):
         self.input_login_locator().fill(mail)
-        self.input_login_locator().wait_for(state="visible", timeout=20000)
 
     def fill_password(self, password):
         self.input_pass_locator().fill(password)
