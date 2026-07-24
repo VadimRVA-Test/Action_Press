@@ -59,8 +59,6 @@ def auth_user_page(action_page, context):
 def action_page(page):
     main_page = ActionPressPage(page)
     main_page.open_page()
-    main_page.banner_control.click_accept_cookies()
-    main_page.banner_control.click_close_jiva()
     return main_page
 
 
