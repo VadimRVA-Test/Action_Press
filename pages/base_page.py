@@ -14,13 +14,13 @@ class BasePage:
         else:
             return f"{self.BASE_URL}"
 
-    def open_page(self, url=None):
+    def open_page(self, url=None, accept_cookies=True, accept_jiva=True):
         self.page.goto(self.composite_url(url))
         cookies = BannerControl(self.page).accept_cookies_button_locator()
         jiva = BannerControl(self.page).close_jiva_button_locator()
-        if cookies.is_visible():
+        if cookies.is_visible() and accept_cookies:
             cookies.click()
-        elif jiva.is_visible():
+        elif jiva.is_visible() and accept_jiva:
             jiva.click()
         else:
             pass
