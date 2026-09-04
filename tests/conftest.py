@@ -1,3 +1,4 @@
+import allure
 import pytest
 from playwright.sync_api import sync_playwright
 from pages.action_press_page import ActionPressPage
@@ -17,7 +18,8 @@ def playwright_instance():
 
 @pytest.fixture
 def browser(playwright_instance):
-    browser = playwright_instance.chromium.launch(headless=False, slow_mo=1000)
+    #browser = playwright_instance.chromium.launch(headless=False, slow_mo=1000)
+    browser = playwright_instance.chromium.launch(headless=True)
     yield browser
     browser.close()
 
@@ -50,7 +52,8 @@ def auth_user_page(action_page, context):
     new_auth_page = new_page.value
     new_auth_page.wait_for_load_state("networkidle")
     new_auth_page = AuthPage(new_auth_page)
-    new_auth_page.authorize(credentials[0], credentials[1])
+    with allure.step("Авторизоваться валидными данными"):
+        new_auth_page.authorize(credentials[0], credentials[1])
     action_page.open_page()
     return action_page
 
