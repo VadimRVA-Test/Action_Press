@@ -14,7 +14,7 @@ pipeline {
 
         stage('Build test image') {
             steps {
-                sh 'docker build -t aqa-ui-tests:${BUILD_NUMBER} .'
+                bat 'docker build -t aqa-ui-tests:${BUILD_NUMBER} .'
             }
         }
 
@@ -23,7 +23,7 @@ pipeline {
                 script {
                     // returnStatus не останавливает pipeline при падении теста.
                     // Отчёт Allure всё равно будет опубликован в блоке post.
-                    int exitCode = sh(
+                    int exitCode = bat(
                         script: '''
                             mkdir -p Action_Press/allure-results
                             docker run --rm \
