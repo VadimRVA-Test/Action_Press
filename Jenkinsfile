@@ -29,7 +29,7 @@ pipeline {
                             docker run --rm \
                               --ipc=host \
                               -v "$WORKSPACE/Action_Press/allure-results:/app/Action_Press/allure-results" \
-                             aqa-ui-tests:local}
+                             aqa-ui-tests:local
                         ''',
                         returnStatus: true
                     )
