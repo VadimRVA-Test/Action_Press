@@ -14,7 +14,7 @@ pipeline {
 
         stage('Build test image') {
             steps {
-                bat 'docker build -t aqa-ui-tests:${BUILD_NUMBER} .'
+                bat 'docker build -t aqa-ui-tests:local .'
             }
         }
 
