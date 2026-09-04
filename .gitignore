@@ -4,6 +4,5 @@ __pycache__/
 .idea/
 ALLURE_path_1.md
 JENKINS_ALLURE_SETUP_GUIDE.md
-
 allure-results/
 allure-report/

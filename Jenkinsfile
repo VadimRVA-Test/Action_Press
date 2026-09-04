@@ -28,7 +28,7 @@ pipeline {
                             mkdir -p Action_Press/allure-results
                             docker run --rm \
                               --ipc=host \
-                              -v "%WORKSPACE%/Action_Press/allure-results:/app/Action_Press/allure-results" \
+                              -v "%WORKSPACE%/allure-results:/app/allure-results" \
                              aqa-ui-tests:local
                         ''',
                         returnStatus: true
