@@ -49,12 +49,12 @@ pipeline {
             allure(
                 includeProperties: false,
                 jdk: '',
-                results: [[path: 'Action_Press/allure-results']]
+                results: [[path: 'allure-results']]
             )
 
             // Сохраняем исходные результаты как artifact на случай отладки.
             archiveArtifacts(
-                artifacts: 'Action_Press/allure-results/**',
+                artifacts: 'allure-results/**',
                 allowEmptyArchive: true
             )
         }
